@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "RbO6ZSCinqZR+nFdxq+rPF0bwCB7VM1mtWs5bFCK4b5Gf3HstzQiwonWNi7EUKCbeQ7PRBgbULLiVb1golZfwQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\139988\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\139988\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\139988\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\139988\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\139988\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\139988\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
