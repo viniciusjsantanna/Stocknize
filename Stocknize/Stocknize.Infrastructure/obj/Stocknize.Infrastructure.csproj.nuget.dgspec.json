@@ -4,6 +4,60 @@
     "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj": {}
   },
   "projects": {
+    "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj",
+        "projectName": "Stocknize.Domain",
+        "projectPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj",
+        "packagesPath": "C:\\Users\\139988\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\139988\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -18,16 +72,20 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj": {
+                "projectPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -37,8 +95,24 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
