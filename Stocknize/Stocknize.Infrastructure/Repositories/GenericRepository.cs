@@ -40,9 +40,17 @@ namespace Stocknize.Infrastructure.Repositories
             return dbset.Where(expression);
         }
 
-        public Task<IList<T>> GetAll(CancellationToken cancellationToken, Expression<Func<T, object>> includes = null)
+        public async Task<IList<T>> GetAll(CancellationToken cancellationToken, Expression<Func<T, object>> includes = null)
         {
-            throw new NotImplementedException();
+            var query = dbset.AsNoTracking();
+
+            if (includes is not null)
+            {
+                query.Include(includes);
+            }
+
+            return await query.ToListAsync(cancellationToken);
+
         }
 
         public Task<T> Update(T entity, CancellationToken cancellationToken)

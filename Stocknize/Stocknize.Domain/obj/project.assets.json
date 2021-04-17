@@ -77,6 +77,16 @@
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
         }
+      },
+      "Stocknize.Crosscutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Stocknize.Crosscutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stocknize.Crosscutting.dll": {}
+        }
       }
     }
   },
@@ -275,12 +285,18 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Stocknize.Crosscutting/1.0.0": {
+      "type": "project",
+      "path": "../Stocknize.Crosscutting/Stocknize.Crosscutting.csproj",
+      "msbuildProject": "../Stocknize.Crosscutting/Stocknize.Crosscutting.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "AutoMapper >= 10.1.1",
-      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1"
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
+      "Stocknize.Crosscutting >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -309,7 +325,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj": {
+              "projectPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

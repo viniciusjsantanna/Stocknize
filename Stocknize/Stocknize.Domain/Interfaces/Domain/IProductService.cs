@@ -6,6 +6,6 @@ namespace Stocknize.Domain.Interfaces.Domain
 {
     public interface IProductService
     {
-        Task<ProductAddOutputModel> AddProduct(ProductInputModel productModel, CancellationToken cancellationToken);
+        Task<ProductOutputModel> AddProduct(ProductInputModel productModel, CancellationToken cancellationToken);
     }
 }

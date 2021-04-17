@@ -130,3 +130,5 @@ C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\obj\Debug\net5.0\Stocknize.
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\obj\Debug\net5.0\ref\Stocknize.Webapi.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\obj\Debug\net5.0\Stocknize.Webapi.pdb
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\obj\Debug\net5.0\Stocknize.Webapi.genruntimeconfig.cache
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Stocknize.Crosscutting.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Stocknize.Crosscutting.pdb

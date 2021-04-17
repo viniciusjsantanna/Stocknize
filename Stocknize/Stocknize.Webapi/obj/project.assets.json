@@ -1602,12 +1602,23 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Stocknize.Crosscutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Stocknize.Crosscutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stocknize.Crosscutting.dll": {}
+        }
+      },
       "Stocknize.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "AutoMapper": "10.1.1",
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1"
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
+          "Stocknize.Crosscutting": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Stocknize.Domain.dll": {}
@@ -6028,6 +6039,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Stocknize.Crosscutting/1.0.0": {
+      "type": "project",
+      "path": "../Stocknize.Crosscutting/Stocknize.Crosscutting.csproj",
+      "msbuildProject": "../Stocknize.Crosscutting/Stocknize.Crosscutting.csproj"
     },
     "Stocknize.Domain/1.0.0": {
       "type": "project",

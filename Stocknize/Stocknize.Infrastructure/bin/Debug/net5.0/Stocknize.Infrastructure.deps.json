@@ -1085,10 +1085,16 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "Stocknize.Crosscutting/1.0.0": {
+        "runtime": {
+          "Stocknize.Crosscutting.dll": {}
+        }
+      },
       "Stocknize.Domain/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1",
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1"
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
+          "Stocknize.Crosscutting": "1.0.0"
         },
         "runtime": {
           "Stocknize.Domain.dll": {}
@@ -1794,6 +1800,11 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Stocknize.Crosscutting/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Stocknize.Domain/1.0.0": {
       "type": "project",

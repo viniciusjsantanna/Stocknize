@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Stocknize.Crosscutting.Extensions;
 using Stocknize.Domain.Entities;
 using Stocknize.Domain.Models.Products;
 
@@ -8,7 +9,8 @@ namespace Stocknize.Domain.Automapper
     {
         public ProductMapper()
         {
-            CreateMap<Product, ProductAddOutputModel>();
+            CreateMap<Product, ProductOutputModel>()
+                .ForMember(e => e.Type, opt => opt.MapFrom(e => e.Type.GetEnumDescription()));
 
             CreateMap<ProductInputModel, Product>();
         }

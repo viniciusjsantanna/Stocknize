@@ -19,7 +19,7 @@ namespace Stocknize.Domain.Services
             this.productRepository = productRepository;
             this.mapper = mapper;
         }
-        public async Task<ProductAddOutputModel> AddProduct(ProductInputModel productModel, CancellationToken cancellationToken)
+        public async Task<ProductOutputModel> AddProduct(ProductInputModel productModel, CancellationToken cancellationToken)
         {
             var existProduct = productRepository.Get(e => e.Name.Equals(productModel.Name)).Any();
 
@@ -30,7 +30,7 @@ namespace Stocknize.Domain.Services
 
             var result = await productRepository.Add(mapper.Map<Product>(productModel), cancellationToken);
 
-            return mapper.Map<ProductAddOutputModel>(result);
+            return mapper.Map<ProductOutputModel>(result);
         }
     }
 }

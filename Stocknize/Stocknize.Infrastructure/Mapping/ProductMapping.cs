@@ -15,11 +15,11 @@ namespace Stocknize.Infrastructure.Mapping
             builder.Property(e => e.Name)
                 .HasColumnType("varchar(50)");
 
-            builder.Property(e => e.Description)
-                .HasColumnType("varchar(300)");
-
             builder.Property(e => e.Price)
                 .HasColumnType("money");
+
+            builder.Property(e => e.Type)
+                .HasConversion<string>();
 
             builder.Property(e => e.CreatedAt);
         }

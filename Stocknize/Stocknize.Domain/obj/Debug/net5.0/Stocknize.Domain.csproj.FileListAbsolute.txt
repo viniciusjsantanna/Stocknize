@@ -22,3 +22,6 @@ C:\Users\139988\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\ref\Stocknize.Domain.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.pdb
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Domain\bin\Debug\net5.0\Stocknize.Crosscutting.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Domain\bin\Debug\net5.0\Stocknize.Crosscutting.pdb
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.csproj.CopyComplete

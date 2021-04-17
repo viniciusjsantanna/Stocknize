@@ -9,7 +9,8 @@
       "Stocknize.Domain/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1",
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1"
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
+          "Stocknize.Crosscutting": "1.0.0"
         },
         "runtime": {
           "Stocknize.Domain.dll": {}
@@ -69,7 +70,12 @@
           }
         }
       },
-      "System.Reflection.Emit/4.7.0": {}
+      "System.Reflection.Emit/4.7.0": {},
+      "Stocknize.Crosscutting/1.0.0": {
+        "runtime": {
+          "Stocknize.Crosscutting.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -126,6 +132,11 @@
       "sha512": "sha512-VR4kk8XLKebQ4MZuKuIni/7oh+QGFmZW3qORd1GvBq/8026OpW501SzT/oypwiQl4TvT8ErnReh/NzY9u+C6wQ==",
       "path": "system.reflection.emit/4.7.0",
       "hashPath": "system.reflection.emit.4.7.0.nupkg.sha512"
+    },
+    "Stocknize.Crosscutting/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
