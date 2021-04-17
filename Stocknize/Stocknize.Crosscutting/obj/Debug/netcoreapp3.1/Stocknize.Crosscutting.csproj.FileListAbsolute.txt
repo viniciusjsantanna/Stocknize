@@ -7,3 +7,12 @@ C:\Users\139988\Desktop\Stocknize\Stocknize\Stocknize.Crosscutting\obj\Debug\net
 C:\Users\139988\Desktop\Stocknize\Stocknize\Stocknize.Crosscutting\obj\Debug\netcoreapp3.1\Stocknize.Crosscutting.csproj.CoreCompileInputs.cache
 C:\Users\139988\Desktop\Stocknize\Stocknize\Stocknize.Crosscutting\obj\Debug\netcoreapp3.1\Stocknize.Crosscutting.dll
 C:\Users\139988\Desktop\Stocknize\Stocknize\Stocknize.Crosscutting\obj\Debug\netcoreapp3.1\Stocknize.Crosscutting.pdb
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Crosscutting\bin\Debug\netcoreapp3.1\Stocknize.Crosscutting.deps.json
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Crosscutting\bin\Debug\netcoreapp3.1\Stocknize.Crosscutting.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Crosscutting\bin\Debug\netcoreapp3.1\Stocknize.Crosscutting.pdb
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Crosscutting\obj\Debug\netcoreapp3.1\Stocknize.Crosscutting.csprojAssemblyReference.cache
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Crosscutting\obj\Debug\netcoreapp3.1\Stocknize.Crosscutting.AssemblyInfoInputs.cache
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Crosscutting\obj\Debug\netcoreapp3.1\Stocknize.Crosscutting.AssemblyInfo.cs
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Crosscutting\obj\Debug\netcoreapp3.1\Stocknize.Crosscutting.csproj.CoreCompileInputs.cache
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Crosscutting\obj\Debug\netcoreapp3.1\Stocknize.Crosscutting.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Crosscutting\obj\Debug\netcoreapp3.1\Stocknize.Crosscutting.pdb

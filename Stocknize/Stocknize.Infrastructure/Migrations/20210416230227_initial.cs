@@ -8,7 +8,7 @@ namespace Stocknize.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "Product",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -19,11 +19,11 @@ namespace Stocknize.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.PrimaryKey("PK_Product", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "User",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -33,11 +33,11 @@ namespace Stocknize.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_User", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Inventories",
+                name: "Inventory",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -47,17 +47,17 @@ namespace Stocknize.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Inventories", x => x.Id);
+                    table.PrimaryKey("PK_Inventory", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Inventories_Products_ProductId",
+                        name: "FK_Inventory_Product_ProductId",
                         column: x => x.ProductId,
-                        principalTable: "Products",
+                        principalTable: "Product",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Movimentations",
+                name: "Movimentation",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -68,11 +68,11 @@ namespace Stocknize.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Movimentations", x => x.Id);
+                    table.PrimaryKey("PK_Movimentation", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Movimentations_Products_ProductId",
+                        name: "FK_Movimentation_Product_ProductId",
                         column: x => x.ProductId,
-                        principalTable: "Products",
+                        principalTable: "Product",
                         principalColumn: "Id");
                 });
 
@@ -88,23 +88,23 @@ namespace Stocknize.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Credentials", x => x.UserId);
                     table.ForeignKey(
-                        name: "FK_Credentials_Users_UserId",
+                        name: "FK_Credentials_User_UserId",
                         column: x => x.UserId,
-                        principalTable: "Users",
+                        principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Inventories_ProductId",
-                table: "Inventories",
+                name: "IX_Inventory_ProductId",
+                table: "Inventory",
                 column: "ProductId",
                 unique: true,
                 filter: "[ProductId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Movimentations_ProductId",
-                table: "Movimentations",
+                name: "IX_Movimentation_ProductId",
+                table: "Movimentation",
                 column: "ProductId");
         }
 
@@ -114,16 +114,16 @@ namespace Stocknize.Infrastructure.Migrations
                 name: "Credentials");
 
             migrationBuilder.DropTable(
-                name: "Inventories");
+                name: "Inventory");
 
             migrationBuilder.DropTable(
-                name: "Movimentations");
+                name: "Movimentation");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "User");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Product");
         }
     }
 }

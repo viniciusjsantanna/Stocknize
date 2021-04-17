@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj": {}
+    "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj": {
+    "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj",
         "projectName": "Stocknize.Domain",
-        "projectPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj",
+        "projectPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj",
         "packagesPath": "C:\\Users\\139988\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\obj\\",
+        "outputPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\139988\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -54,18 +64,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj": {
+    "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj",
         "projectName": "Stocknize.Infrastructure",
-        "projectPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\139988\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\139988\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +92,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj": {
-                "projectPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj"
+              "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj": {
+                "projectPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj"
               }
             }
           }
@@ -128,18 +138,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj": {
+    "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj",
+        "projectUniqueName": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj",
         "projectName": "Stocknize.Webapi",
-        "projectPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj",
+        "projectPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj",
         "packagesPath": "C:\\Users\\139988\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Webapi\\obj\\",
+        "outputPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\139988\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -156,8 +166,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj"
+              "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj"
               }
             }
           }
@@ -201,7 +211,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

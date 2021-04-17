@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Extensions\Enum\" />
+    <Folder Include="Extensions\enum\" />
   </ItemGroup>
 
 </Project>

@@ -40,7 +40,7 @@ namespace Stocknize.Infrastructure.Migrations
                         .IsUnique()
                         .HasFilter("[ProductId] IS NOT NULL");
 
-                    b.ToTable("Inventories");
+                    b.ToTable("Inventory");
                 });
 
             modelBuilder.Entity("Stocknize.Domain.Entities.Movimentation", b =>
@@ -66,7 +66,7 @@ namespace Stocknize.Infrastructure.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Movimentations");
+                    b.ToTable("Movimentation");
                 });
 
             modelBuilder.Entity("Stocknize.Domain.Entities.Product", b =>
@@ -89,7 +89,7 @@ namespace Stocknize.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("Stocknize.Domain.Entities.User", b =>
@@ -109,7 +109,7 @@ namespace Stocknize.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("Stocknize.Domain.Entities.Inventory", b =>

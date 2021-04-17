@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj": {}
+    "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj": {
+    "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj",
+        "projectUniqueName": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj",
         "projectName": "Stocknize.Crosscutting",
-        "projectPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj",
+        "projectPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj",
         "packagesPath": "C:\\Users\\139988\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\obj\\",
+        "outputPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\139988\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

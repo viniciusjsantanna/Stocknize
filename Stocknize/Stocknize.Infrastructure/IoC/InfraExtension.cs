@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Stocknize.Domain.Interfaces.Repositories;
 using Stocknize.Infrastructure.Context;
+using Stocknize.Infrastructure.Repositories;
 
 namespace Stocknize.Infrastructure.IoC
 {
@@ -15,6 +17,8 @@ namespace Stocknize.Infrastructure.IoC
             {
                 config.UseSqlServer(configuration.GetConnectionString(SqlServerConnectionString));
             });
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IProductRepository, ProductRepository>();
         }
     }
 }
