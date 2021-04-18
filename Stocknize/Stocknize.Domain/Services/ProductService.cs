@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Stocknize.Domain.Entities;
+using Stocknize.Domain.Exceptions;
 using Stocknize.Domain.Interfaces.Domain;
 using Stocknize.Domain.Interfaces.Repositories;
 using Stocknize.Domain.Models.Products;
@@ -35,7 +36,7 @@ namespace Stocknize.Domain.Services
         public async Task DeleteProduct(System.Guid productId, CancellationToken cancellationToken)
         {
             var product = await productRepository.Get(e => e.Id.Equals(productId), cancellationToken)
-                ?? throw new System.Exception("Não foi possível encontrar o produto");
+                ?? throw new NotFoundException("Não foi possível encontrar o produto");
 
             await productRepository.Delete(product, cancellationToken);
         }

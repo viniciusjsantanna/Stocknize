@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -6,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Stocknize.Domain.IoC;
 using Stocknize.Infrastructure.IoC;
+using Stocknize.Webapi.Filters;
 
 namespace Stocknize.Webapi
 {
@@ -23,7 +25,11 @@ namespace Stocknize.Webapi
         {
             services.InfraRegister(Configuration);
             services.DomainRegister();
-            services.AddControllers();
+            services.AddControllers(config =>
+            {
+                config.Filters.Add<GlobalExceptionFilter>();
+            }).AddFluentValidation(fv => fv.RegisterValidatorsFromAssembly(typeof(Startup).Assembly));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Stocknize.Webapi", Version = "v1" });

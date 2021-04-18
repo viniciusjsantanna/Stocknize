@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Stocknize.Domain.Exceptions.NotFound;
 using Stocknize.Domain.Interfaces.Domain;
+using Stocknize.Domain.Interfaces.Filters;
 using Stocknize.Domain.Services;
 
 namespace Stocknize.Domain.IoC
@@ -10,6 +12,9 @@ namespace Stocknize.Domain.IoC
         {
             services.AddAutoMapper(typeof(DomainExtension).Assembly);
             services.AddScoped<IProductService, ProductService>();
+
+            //filters
+            services.AddScoped<IExceptionHandler, NotFoundExceptionHandler>();
         }
     }
 }

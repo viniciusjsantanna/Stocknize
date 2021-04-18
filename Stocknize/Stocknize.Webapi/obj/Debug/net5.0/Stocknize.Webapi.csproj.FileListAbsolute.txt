@@ -132,3 +132,8 @@ C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\obj\Debug\net5.0\Stocknize.
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\obj\Debug\net5.0\Stocknize.Webapi.genruntimeconfig.cache
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Stocknize.Crosscutting.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Stocknize.Crosscutting.pdb
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
