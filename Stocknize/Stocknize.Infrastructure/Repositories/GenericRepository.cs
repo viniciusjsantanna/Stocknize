@@ -3,7 +3,6 @@ using Stocknize.Domain.Interfaces.Repositories;
 using Stocknize.Infrastructure.Context;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -30,14 +29,22 @@ namespace Stocknize.Infrastructure.Repositories
             return entity;
         }
 
-        public Task<T> Delete(T Entity, CancellationToken cancellationToken)
+        public Task<bool> Any(Expression<Func<T, bool>> expression, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return dbset.AnyAsync(expression, cancellationToken);
         }
 
-        public IQueryable<T> Get(Expression<Func<T, bool>> expression)
+        public async Task<T> Delete(T entity, CancellationToken cancellationToken)
         {
-            return dbset.Where(expression);
+            dbset.Remove(entity);
+            await context.SaveChangesAsync(cancellationToken);
+
+            return entity;
+        }
+
+        public Task<T> Get(Expression<Func<T, bool>> expression, CancellationToken cancellationToken)
+        {
+            return dbset.FirstOrDefaultAsync(expression, cancellationToken);
         }
 
         public async Task<IList<T>> GetAll(CancellationToken cancellationToken, Expression<Func<T, object>> includes = null)
@@ -50,12 +57,13 @@ namespace Stocknize.Infrastructure.Repositories
             }
 
             return await query.ToListAsync(cancellationToken);
-
         }
 
-        public Task<T> Update(T entity, CancellationToken cancellationToken)
+        public async Task<T> Update(T entity, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            dbset.Update(entity);
+            await context.SaveChangesAsync(cancellationToken);
+            return entity;
         }
     }
 }
