@@ -7,10 +7,10 @@ namespace Stocknize.Infrastructure.Context
     {
         public EFContext(DbContextOptions<EFContext> options) : base(options) { }
 
-        public DbSet<Product> Products { get; }
-        public DbSet<Inventory> Inventories { get; }
-        public DbSet<Movimentation> Movimentations { get; }
-        public DbSet<User> Users { get; }
+        //public DbSet<Product> Products { get; }
+        //public DbSet<Inventory> Inventories { get; }
+        //public DbSet<Movimentation> Movimentations { get; }
+        //public DbSet<User> Users { get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

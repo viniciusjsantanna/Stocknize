@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocknize.Webapi", "Stockni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocknize.Crosscutting", "Stocknize.Crosscutting\Stocknize.Crosscutting.csproj", "{D0C4DDFB-6075-473E-BF8F-6AEEAD51CA90}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Qa", "Qa", "{1ADBBA02-B0CB-48EC-A28A-AEA57A0B6E07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocknize.UnitTests", "Stocknize.UnitTests\Stocknize.UnitTests.csproj", "{93BD7D60-7B41-481C-B0A8-3641A6CD931E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{D0C4DDFB-6075-473E-BF8F-6AEEAD51CA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0C4DDFB-6075-473E-BF8F-6AEEAD51CA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0C4DDFB-6075-473E-BF8F-6AEEAD51CA90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93BD7D60-7B41-481C-B0A8-3641A6CD931E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93BD7D60-7B41-481C-B0A8-3641A6CD931E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93BD7D60-7B41-481C-B0A8-3641A6CD931E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93BD7D60-7B41-481C-B0A8-3641A6CD931E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +58,7 @@ Global
 		{5780CF64-FC05-41B7-9208-D5A81B185013} = {9F51C757-355B-4D86-95F4-D7AED93D9C27}
 		{AA0E937D-8874-4B72-BE04-A3C21F57CF10} = {28DC1BDE-3304-43D4-BAC2-17C4817C84BD}
 		{D0C4DDFB-6075-473E-BF8F-6AEEAD51CA90} = {D67E09DE-7A23-49C4-A03D-EDDAE4479F4B}
+		{93BD7D60-7B41-481C-B0A8-3641A6CD931E} = {1ADBBA02-B0CB-48EC-A28A-AEA57A0B6E07}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BBA10B33-647E-4443-A0AB-F7FE7B1C3B3C}

@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "MhWkyiPyaNs0ffN60sqnl3+VUfwY9DUDLIMNQFilfpLOLb9WvvIirNOw6eMEOKZXzaw1Jit2QbV1jo38JVQsAw==",
+  "dgSpecHash": "F+5WBxQyQ8q8zpY7eNOmhjV/VINLhWi+9IEM7qihhIIg9qISVK6snk0+kIm7DAKRSE6SH17RR8q58cn1B+MT0Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\139988\\Desktop\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\139988\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\139988\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\139988\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\139988\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.0.0\\microsoft.extensions.dependencyinjection.abstractions.3.0.0.nupkg.sha512",
+    "C:\\Users\\139988\\.nuget\\packages\\microsoft.extensions.options\\3.0.0\\microsoft.extensions.options.3.0.0.nupkg.sha512",
+    "C:\\Users\\139988\\.nuget\\packages\\microsoft.extensions.primitives\\3.0.0\\microsoft.extensions.primitives.3.0.0.nupkg.sha512",
+    "C:\\Users\\139988\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
