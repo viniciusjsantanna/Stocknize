@@ -19,6 +19,7 @@ namespace Stocknize.Infrastructure.IoC
             });
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IInventoryRepository, InventoryRepository>();
         }
     }
 }
