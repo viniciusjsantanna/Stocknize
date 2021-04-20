@@ -2,6 +2,7 @@
 using Moq;
 using Stocknize.Domain.Entities;
 using Stocknize.Domain.Enums;
+using Stocknize.Domain.Interfaces.Domain;
 using Stocknize.Domain.Interfaces.Repositories;
 using Stocknize.Domain.Models.Products;
 using Stocknize.Domain.Services;
@@ -44,7 +45,9 @@ namespace Stocknize.UnitTests.Domain
             mockMapper.Setup(x => x.Map<Product>(It.IsAny<ProductInputModel>())).Returns(product);
             mockMapper.Setup(x => x.Map<ProductOutputModel>(It.IsAny<Product>())).Returns(productOutput);
 
-            var productService = new ProductService(mockRepository.Object, mockMapper.Object);
+            var mockInventoryService = new Mock<IInventoryService>();
+
+            var productService = new ProductService(mockRepository.Object, mockInventoryService.Object, mockMapper.Object);
 
             //act
 
@@ -73,8 +76,9 @@ namespace Stocknize.UnitTests.Domain
             mockRepository.Setup(x => x.Any(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(false));
 
             var mockMapper = new Mock<IMapper>();
+            var mockInventoryService = new Mock<IInventoryService>();
 
-            var productService = new ProductService(mockRepository.Object, mockMapper.Object);
+            var productService = new ProductService(mockRepository.Object, mockInventoryService.Object, mockMapper.Object);
             //act
 
             var result = await productService.AddProduct(productInputModel, new CancellationToken());

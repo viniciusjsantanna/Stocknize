@@ -9,13 +9,17 @@ namespace Stocknize.Webapi.Validators.Product
         {
             RuleFor(e => e.Name)
                 .NotEmpty()
-                .WithMessage("O Nome do Produto é Obrigatório!")
+                .WithMessage("O Nome do Produto é obrigatório!")
                 .MinimumLength(3)
                 .WithMessage("O Nome do Produto deve conter pelo menos 3 caracteres");
 
             RuleFor(e => e.Price)
                 .GreaterThan(0M)
                 .WithMessage("O Preço deve ser maior que zero");
+
+            RuleFor(e => e.Type)
+                .NotNull()
+                .WithMessage("O Tipo é obrigatório!");
         }
     }
 }

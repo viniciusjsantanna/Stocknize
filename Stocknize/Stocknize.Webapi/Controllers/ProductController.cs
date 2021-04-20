@@ -39,7 +39,7 @@ namespace Stocknize.Webapi.Controllers
         [HttpGet]
         public async Task<IList<ProductOutputModel>> GetProducts(CancellationToken cancellationToken)
         {
-            return mapper.Map<IList<ProductOutputModel>>(await productRepository.GetAll(cancellationToken));
+            return mapper.Map<IList<ProductOutputModel>>(await productRepository.GetProducts(cancellationToken));
         }
 
         [HttpGet]

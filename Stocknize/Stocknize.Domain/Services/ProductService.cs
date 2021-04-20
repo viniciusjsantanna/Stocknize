@@ -12,11 +12,14 @@ namespace Stocknize.Domain.Services
     public class ProductService : IProductService
     {
         private readonly IProductRepository productRepository;
+        private readonly IInventoryService inventoryService;
         private readonly IMapper mapper;
+        private const int DEFAULT_INVENTORY_QUANTITY = 0;
 
-        public ProductService(IProductRepository productRepository, IMapper mapper)
+        public ProductService(IProductRepository productRepository, IInventoryService inventoryService, IMapper mapper)
         {
             this.productRepository = productRepository;
+            this.inventoryService = inventoryService;
             this.mapper = mapper;
         }
         public async Task<ProductOutputModel> AddProduct(ProductInputModel productModel, CancellationToken cancellationToken)
@@ -29,6 +32,8 @@ namespace Stocknize.Domain.Services
             }
 
             var result = await productRepository.Add(mapper.Map<Product>(productModel), cancellationToken);
+
+            await inventoryService.AddInventory(result.Id, DEFAULT_INVENTORY_QUANTITY, cancellationToken);
 
             return mapper.Map<ProductOutputModel>(result);
         }

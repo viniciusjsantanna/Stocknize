@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace Stocknize.Infrastructure.Repositories
 {
-    public class ProductRepository : GenericRepository<Product>, IProductRepository
+    public class InventoryRepository : GenericRepository<Inventory>, IInventoryRepository
     {
-        public ProductRepository(EFContext context) : base(context)
+        public InventoryRepository(EFContext context) : base(context)
         {
 
         }
 
-        public async Task<IList<Product>> GetProducts(CancellationToken cancellationToken)
+        public async Task<IList<Inventory>> GetRepositories(CancellationToken cancellationToken)
         {
-            return await entities.ToListAsync(cancellationToken);
+            return await entities.Include(e => e.Product).ToListAsync();
         }
     }
 }

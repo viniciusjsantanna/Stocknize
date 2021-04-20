@@ -12,6 +12,7 @@ namespace Stocknize.Domain.IoC
         {
             services.AddAutoMapper(typeof(DomainExtension).Assembly);
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IInventoryService, InventoryService>();
 
             //filters
             services.AddScoped<IExceptionHandler, NotFoundExceptionHandler>();
