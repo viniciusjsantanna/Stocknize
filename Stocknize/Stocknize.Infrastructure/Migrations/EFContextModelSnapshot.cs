@@ -146,6 +146,9 @@ namespace Stocknize.Infrastructure.Migrations
                             b1.Property<string>("Password")
                                 .HasColumnType("varchar(max)");
 
+                            b1.Property<string>("Salt")
+                                .HasColumnType("nvarchar(max)");
+
                             b1.HasKey("UserId");
 
                             b1.ToTable("Credentials");

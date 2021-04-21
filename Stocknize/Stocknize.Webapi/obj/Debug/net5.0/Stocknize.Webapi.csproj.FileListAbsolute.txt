@@ -94,6 +94,7 @@ C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\NetCore.AutoRegisterDi.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NetCore.AutoRegisterDi;
 using Stocknize.Domain.Interfaces.Repositories;
 using Stocknize.Infrastructure.Context;
 using Stocknize.Infrastructure.Repositories;
@@ -18,8 +19,9 @@ namespace Stocknize.Infrastructure.IoC
                 config.UseSqlServer(configuration.GetConnectionString(SqlServerConnectionString));
             });
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<IInventoryRepository, InventoryRepository>();
+            services.RegisterAssemblyPublicNonGenericClasses()
+                    .Where(e => e.Name.EndsWith("Repository"))
+                    .AsPublicImplementedInterfaces();
         }
     }
 }
