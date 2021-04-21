@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using Stocknize.Domain.Entities;
 using Stocknize.Domain.Interfaces.Domain;
 using Stocknize.Domain.Models.Jwt;
@@ -14,9 +15,13 @@ namespace Stocknize.Domain.Services
 {
     public class JwtGenerator : IJwtGenerator
     {
-        private const string Issuer = "https://localhost:5001";
-        private const string Secret = "VeryHyperMegaSuperSecretKey";
+        public JwtGenerator(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
+
         private const double ExpirationInMinutes = 60;
+        private readonly IConfiguration configuration;
 
         public Task<JwtModel> GenerateToken(User user)
         {
@@ -31,11 +36,11 @@ namespace Stocknize.Domain.Services
 
         private JwtSecurityToken ConfigureToken(User user)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Secret));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Secret"]));
             var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             return new JwtSecurityToken(
-                    issuer: Issuer,
+                    issuer: configuration["Jwt:Issuer"],
                     claims: GenerateUserListClaims(user),
                     expires: DateTime.Now.AddMinutes(ExpirationInMinutes),
                     signingCredentials: signingCredentials
@@ -47,7 +52,8 @@ namespace Stocknize.Domain.Services
             return new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.Credentials.Login)
+                new Claim(ClaimTypes.Name, user.Credentials.Login),
+                new Claim(JwtRegisteredClaimNames.Aud, configuration["Jwt:Audience"])
             };
         }
     }
