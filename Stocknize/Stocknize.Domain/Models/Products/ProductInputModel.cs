@@ -2,10 +2,10 @@
 
 namespace Stocknize.Domain.Models.Products
 {
-    public class ProductInputModel
+    public record ProductInputModel
     {
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public ProductType Type { get; set; }
+        public string Name { get; init; }
+        public decimal Price { get; init; }
+        public ProductType Type { get; init; }
     }
 }

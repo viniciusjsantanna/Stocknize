@@ -28,13 +28,7 @@ namespace Stocknize.UnitTests.Domain
                 Type = ProductType.Beer
             };
 
-            var productOutput = new ProductOutputModel
-            {
-                Name = "Skol lata",
-                Price = 2.39M,
-                Type = "Cerveja"
-            };
-
+            var productOutput = new ProductOutputModel(Guid.NewGuid(), "Skol lata", 2.39M, "Cerveja");
 
             var mockRepository = new Mock<IProductRepository>();
             mockRepository.Setup(x => x.Any(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(false));

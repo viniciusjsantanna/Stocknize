@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using NetCore.AutoRegisterDi;
 using Stocknize.Domain.Exceptions.NotFound;
 using Stocknize.Domain.Interfaces.Domain;
 using Stocknize.Domain.Interfaces.Filters;
@@ -11,8 +12,10 @@ namespace Stocknize.Domain.IoC
         public static void DomainRegister(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(DomainExtension).Assembly);
-            services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<IInventoryService, InventoryService>();
+            services.RegisterAssemblyPublicNonGenericClasses()
+                .Where(e => e.Name.EndsWith("Service"))
+                .AsPublicImplementedInterfaces(ServiceLifetime.Scoped);
+            services.AddScoped<IJwtGenerator, JwtGenerator>();
 
             //filters
             services.AddScoped<IExceptionHandler, NotFoundExceptionHandler>();

@@ -26,6 +26,8 @@ namespace Stocknize.Infrastructure.Mapping
                         .HasColumnType("varchar(50)");
                     e.Property(e => e.Password)
                         .HasColumnType("varchar(max)");
+                    e.Property(e => e.Salt)
+                        .HasColumnType("varchar(max)");
                 });
         }
     }
