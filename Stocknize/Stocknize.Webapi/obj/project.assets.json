@@ -6969,19 +6969,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\139988\\.nuget\\packages\\": {}
+    "C:\\Users\\Felipe Nanes\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj",
+      "projectUniqueName": "C:\\Users\\Felipe Nanes\\Source\\Repos\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj",
       "projectName": "Stocknize.Webapi",
-      "projectPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj",
-      "packagesPath": "C:\\Users\\139988\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Webapi\\obj\\",
+      "projectPath": "C:\\Users\\Felipe Nanes\\Source\\Repos\\Stocknize\\Stocknize\\Stocknize.Webapi\\Stocknize.Webapi.csproj",
+      "packagesPath": "C:\\Users\\Felipe Nanes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Felipe Nanes\\Source\\Repos\\Stocknize\\Stocknize\\Stocknize.Webapi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\139988\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Felipe Nanes\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6995,8 +6995,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj"
+            "C:\\Users\\Felipe Nanes\\Source\\Repos\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Felipe Nanes\\Source\\Repos\\Stocknize\\Stocknize\\Stocknize.Infrastructure\\Stocknize.Infrastructure.csproj"
             }
           }
         }

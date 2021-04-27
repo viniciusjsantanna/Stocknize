@@ -3786,19 +3786,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\139988\\.nuget\\packages\\": {}
+    "C:\\Users\\Felipe Nanes\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Felipe Nanes\\Source\\Repos\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj",
       "projectName": "Stocknize.Domain",
-      "projectPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj",
-      "packagesPath": "C:\\Users\\139988\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Domain\\obj\\",
+      "projectPath": "C:\\Users\\Felipe Nanes\\Source\\Repos\\Stocknize\\Stocknize\\Stocknize.Domain\\Stocknize.Domain.csproj",
+      "packagesPath": "C:\\Users\\Felipe Nanes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Felipe Nanes\\Source\\Repos\\Stocknize\\Stocknize\\Stocknize.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\139988\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Felipe Nanes\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3812,8 +3812,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj": {
-              "projectPath": "C:\\Users\\139988\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj"
+            "C:\\Users\\Felipe Nanes\\Source\\Repos\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj": {
+              "projectPath": "C:\\Users\\Felipe Nanes\\Source\\Repos\\Stocknize\\Stocknize\\Stocknize.Crosscutting\\Stocknize.Crosscutting.csproj"
             }
           }
         }
