@@ -2,11 +2,5 @@
 
 namespace Stocknize.Domain.Models.Products
 {
-    public class ProductOutputModel
-    {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public string Type { get; set; }
-    }
+    public record ProductOutputModel(Guid Id, string Name, decimal Price, string Type);
 }
