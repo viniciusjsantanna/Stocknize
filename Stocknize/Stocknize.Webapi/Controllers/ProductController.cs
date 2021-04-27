@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Stocknize.Domain.Interfaces.Domain;
 using Stocknize.Domain.Interfaces.Repositories;
@@ -13,6 +14,7 @@ namespace Stocknize.Webapi.Controllers
 {
     [Route("api/products")]
     [ApiController]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         private readonly IProductRepository productRepository;

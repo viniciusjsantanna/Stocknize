@@ -10,8 +10,8 @@ using Stocknize.Infrastructure.Context;
 namespace Stocknize.Infrastructure.Migrations
 {
     [DbContext(typeof(EFContext))]
-    [Migration("20210416230227_initial")]
-    partial class initial
+    [Migration("20210421174822_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -80,14 +80,15 @@ namespace Stocknize.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("varchar(300)");
-
                     b.Property<string>("Name")
                         .HasColumnType("varchar(50)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("money");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -146,6 +147,9 @@ namespace Stocknize.Infrastructure.Migrations
 
                             b1.Property<string>("Password")
                                 .HasColumnType("varchar(max)");
+
+                            b1.Property<string>("Salt")
+                                .HasColumnType("nvarchar(max)");
 
                             b1.HasKey("UserId");
 

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Stocknize.Domain.Entities;
 using Stocknize.Domain.Interfaces.Repositories;
 using Stocknize.Domain.Models.Inventories;
 using System.Collections.Generic;
