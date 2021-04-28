@@ -24,7 +24,7 @@ namespace Stocknize.Webapi.Controllers
         [HttpGet]
         public async Task<IList<InventoryOutputModel>> Get(CancellationToken cancellationToken)
         {
-            return mapper.Map<IList<InventoryOutputModel>>(await inventoryRepository.GetRepositories(cancellationToken));
+            return mapper.Map<IList<InventoryOutputModel>>(await inventoryRepository.GetInventories(cancellationToken));
         }
     }
 }

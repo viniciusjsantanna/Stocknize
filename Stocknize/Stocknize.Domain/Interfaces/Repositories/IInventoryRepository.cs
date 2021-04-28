@@ -7,6 +7,6 @@ namespace Stocknize.Domain.Interfaces.Repositories
 {
     public interface IInventoryRepository : IGenericRepository<Inventory>
     {
-        Task<IList<Inventory>> GetRepositories(CancellationToken cancellationToken);
+        Task<IList<Inventory>> GetInventories(CancellationToken cancellationToken);
     }
 }

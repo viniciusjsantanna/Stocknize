@@ -15,7 +15,7 @@ namespace Stocknize.Infrastructure.Repositories
 
         }
 
-        public async Task<IList<Inventory>> GetRepositories(CancellationToken cancellationToken)
+        public async Task<IList<Inventory>> GetInventories(CancellationToken cancellationToken)
         {
             return await entities.Include(e => e.Product).ToListAsync();
         }

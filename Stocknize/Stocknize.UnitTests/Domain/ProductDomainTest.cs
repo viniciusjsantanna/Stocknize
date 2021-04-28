@@ -80,5 +80,12 @@ namespace Stocknize.UnitTests.Domain
             //assert
             Assert.NotNull(result);
         }
+
+        [Fact]
+        public async Task ProductIntpuModelIsValidAndProductExistAtDb_ProductUpdated_ReturnsProductUpdatedAsSuccessMessage()
+        {
+
+            await Task.CompletedTask;
+        }
     }
 }
