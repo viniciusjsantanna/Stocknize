@@ -10,7 +10,7 @@ namespace Stocknize.Webapi.Filters
 {
     public class GlobalExceptionFilter : ExceptionFilterAttribute
     {
-        private const string DefaultErrorMessage = "Houve um error inesperado!";
+        private const string DefaultErrorMessage = "Houve um erro inesperado!";
         private readonly IEnumerable<IExceptionHandler> exceptionHandlers;
 
         public GlobalExceptionFilter(IEnumerable<IExceptionHandler> exceptionHandlers)
@@ -22,7 +22,7 @@ namespace Stocknize.Webapi.Filters
             var exceptionType = exceptionHandlers.Where(e => e.GetType().Name.Contains(context.Exception.GetType().Name)).FirstOrDefault();
             if (exceptionType is not null)
             {
-              context.Result = await exceptionType.Handle(context.Exception);
+                context.Result = await exceptionType.Handle(context.Exception);
             }
             else
             {

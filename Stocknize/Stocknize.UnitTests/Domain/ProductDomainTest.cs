@@ -2,6 +2,7 @@
 using Moq;
 using Stocknize.Domain.Entities;
 using Stocknize.Domain.Enums;
+using Stocknize.Domain.Exceptions;
 using Stocknize.Domain.Interfaces.Domain;
 using Stocknize.Domain.Interfaces.Repositories;
 using Stocknize.Domain.Models.Products;
@@ -28,7 +29,10 @@ namespace Stocknize.UnitTests.Domain
                 Type = ProductType.Beer
             };
 
-            var productOutput = new ProductOutputModel(Guid.NewGuid(), "Skol lata", 2.39M, "Cerveja");
+            var productOutput = new ProductOutputModel(Guid.NewGuid(), "Skol lata", 2.39M)
+            {
+                Type = "Cerveja"
+            };
 
             var mockRepository = new Mock<IProductRepository>();
             mockRepository.Setup(x => x.Any(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(false));
@@ -49,8 +53,8 @@ namespace Stocknize.UnitTests.Domain
 
             //assert
             Assert.NotNull(result);
-            Assert.Equal(result.Name, product.Name);
-            Assert.Equal(result.Price, product.Price);
+            Assert.Equal(result.Name, productOutput.Name);
+            Assert.Equal(result.Price, productOutput.Price);
             Assert.True(result.Type.Equals("Cerveja"));
         }
 
@@ -67,25 +71,133 @@ namespace Stocknize.UnitTests.Domain
             };
 
             var mockRepository = new Mock<IProductRepository>();
-            mockRepository.Setup(x => x.Any(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(false));
+            mockRepository.Setup(x => x.Any(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(true));
 
             var mockMapper = new Mock<IMapper>();
             var mockInventoryService = new Mock<IInventoryService>();
 
             var productService = new ProductService(mockRepository.Object, mockInventoryService.Object, mockMapper.Object);
-            //act
-
-            var result = await productService.AddProduct(productInputModel, new CancellationToken());
 
             //assert
-            Assert.NotNull(result);
+            await Assert.ThrowsAsync<Exception>(async () => await productService.AddProduct(productInputModel, new CancellationToken()));
         }
 
         [Fact]
         public async Task ProductIntpuModelIsValidAndProductExistAtDb_ProductUpdated_ReturnsProductUpdatedAsSuccessMessage()
         {
+            //arrange
+            var productDb = new Product("Skol lata", 2.39M, ProductType.Beer)
+            {
+                Id = Guid.NewGuid()
+            };
 
-            await Task.CompletedTask;
+            var product = new Product("Skol latão", 2.50M, ProductType.Beer)
+            {
+                Id = Guid.NewGuid()
+            };
+
+            var productInputModel = new ProductInputModel
+            {
+                Name = "Skol lata",
+                Price = 2.39M,
+                Type = ProductType.Beer
+            };
+
+            var productOutput = new ProductOutputModel(Guid.NewGuid(), "Skol lata", 2.39M)
+            {
+                Type = "Cerveja"
+            };
+
+            var mockInventoryService = new Mock<IInventoryService>();
+
+            var mockMapper = new Mock<IMapper>();
+            mockMapper.Setup(x => x.Map(It.IsAny<ProductInputModel>(), It.IsAny<Product>())).Returns(product);
+            mockMapper.Setup(x => x.Map<ProductOutputModel>(It.IsAny<Product>())).Returns(productOutput);
+
+            var mockRepository = new Mock<IProductRepository>();
+            mockRepository.Setup(x => x.Get(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(productDb));
+            mockRepository.Setup(x => x.Update(It.IsAny<Product>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult(product));
+
+            var productService = new ProductService(mockRepository.Object, mockInventoryService.Object, mockMapper.Object);
+
+            //Act
+
+            var result = await productService.UpdateProduct(Guid.NewGuid(), productInputModel, new CancellationToken());
+
+            //assert
+
+            Assert.NotNull(result);
+            Assert.Equal(result.Name, productOutput.Name);
+            Assert.Equal(result.Price, productOutput.Price);
+            Assert.Equal(result.Type, productOutput.Type);
+        }
+
+        [Fact]
+        public async Task ProductUpdateModelIsValid_TryToGetProductButReturnsNull_ReturnsNotFoundExceptionAsResultMessage()
+        {
+            //arrange
+            Product product = null;
+            var productInputModel = new ProductInputModel
+            {
+                Name = "Skol lata",
+                Price = 2.39M,
+                Type = ProductType.Beer
+            };
+            var mockInventoryService = new Mock<IInventoryService>();
+
+            var mockMapper = new Mock<IMapper>();
+
+            var mockRepository = new Mock<IProductRepository>();
+            mockRepository.Setup(x => x.Get(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(product));
+
+            var productService = new ProductService(mockRepository.Object, mockInventoryService.Object, mockMapper.Object);
+
+            //assert
+            await Assert.ThrowsAsync<NotFoundException>(async () => await productService.UpdateProduct(Guid.NewGuid(), productInputModel, new CancellationToken()));
+        }
+
+        [Fact]
+        public async Task ProductDeleteModelIsValid_DeleteProduct_ReturnsTaskComplete()
+        {
+            //arrange
+            var product = new Product("Skol latão", 2.50M, ProductType.Beer)
+            {
+                Id = Guid.NewGuid()
+            };
+
+            var mockInventoryService = new Mock<IInventoryService>();
+
+            var mockMapper = new Mock<IMapper>();
+
+            var mockRepository = new Mock<IProductRepository>();
+            mockRepository.Setup(x => x.Get(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(product));
+            mockRepository.Setup(x => x.Delete(It.IsAny<Product>(), It.IsAny<CancellationToken>())).Returns(Task.CompletedTask);
+
+            var productService = new ProductService(mockRepository.Object, mockInventoryService.Object, mockMapper.Object);
+
+            //act
+            await productService.DeleteProduct(Guid.NewGuid(), new CancellationToken());
+        }
+
+        [Fact]
+        public async Task ProductDeleteModelIsNotValid_GottenNoProduct_ReturnsThrowNotFoundException()
+        {
+            //arrange
+            Product product = null;
+
+            var mockInventoryService = new Mock<IInventoryService>();
+
+            var mockMapper = new Mock<IMapper>();
+
+            var mockRepository = new Mock<IProductRepository>();
+            mockRepository.Setup(x => x.Get(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(product));
+            mockRepository.Setup(x => x.Delete(It.IsAny<Product>(), It.IsAny<CancellationToken>())).Returns(Task.CompletedTask);
+
+            var productService = new ProductService(mockRepository.Object, mockInventoryService.Object, mockMapper.Object);
+
+            //act
+            await Assert.ThrowsAsync<NotFoundException>(async () => await productService.DeleteProduct(Guid.NewGuid(), new CancellationToken()));
         }
     }
 }

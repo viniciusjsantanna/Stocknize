@@ -6,6 +6,7 @@ using Stocknize.Domain.Interfaces.Repositories;
 using Stocknize.Domain.Models.Products;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Transactions;
@@ -41,7 +42,7 @@ namespace Stocknize.Webapi.Controllers
         [HttpGet]
         public async Task<IList<ProductOutputModel>> GetProducts(CancellationToken cancellationToken)
         {
-            return mapper.Map<IList<ProductOutputModel>>(await productRepository.GetProducts(cancellationToken));
+            return mapper.Map<IList<ProductOutputModel>>(await productRepository.GetProducts(cancellationToken)); ;
         }
 
         [HttpGet]
