@@ -14,7 +14,14 @@ namespace Stocknize.Domain.Automapper
                 .ForMember(e => e.Quantity, opt => opt.MapFrom(e => e.Quantity))
                 .ForPath(e => e.ProductId, opt => opt.MapFrom(e => e.Product.Id))
                 .ForPath(e => e.ProductName, opt => opt.MapFrom(e => e.Product.Name))
-                .ForPath(e => e.ProductType, opt => opt.MapFrom(e => e.Product.Type.GetEnumDescription()));
+                .ForPath(e => e.ProductType, opt => opt.MapFrom(e => e.Product.Type.GetDescription()));
+
+            CreateMap<MovimentationInputModel, Movimentation>();
+
+            CreateMap<Movimentation, MovimentationOutputModel>()
+                .ForMember(e => e.User, opt => opt.MapFrom(e => e.User.Name))
+                .ForMember(e => e.Product, opt => opt.MapFrom(e => e.Product.Name))
+                .ForMember(e => e.Type, opt => opt.MapFrom(e => e.Type.GetDescription()));
 
         }
     }

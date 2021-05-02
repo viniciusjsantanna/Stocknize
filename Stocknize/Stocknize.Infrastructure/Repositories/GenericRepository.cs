@@ -33,12 +33,10 @@ namespace Stocknize.Infrastructure.Repositories
             return entities.AnyAsync(expression, cancellationToken);
         }
 
-        public async Task<T> Delete(T entity, CancellationToken cancellationToken)
+        public async Task Delete(T entity, CancellationToken cancellationToken)
         {
             entities.Remove(entity);
             await context.SaveChangesAsync(cancellationToken);
-
-            return entity;
         }
 
         public Task<T> Get(Expression<Func<T, bool>> expression, CancellationToken cancellationToken)

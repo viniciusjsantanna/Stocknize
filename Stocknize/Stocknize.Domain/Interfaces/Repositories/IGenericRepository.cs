@@ -10,7 +10,7 @@ namespace Stocknize.Domain.Interfaces.Repositories
     {
         Task<T> Add(T entity, CancellationToken cancellationToken);
         Task<T> Update(T entity, CancellationToken cancellationToken);
-        Task<T> Delete(T entity, CancellationToken cancellationToken);
+        Task Delete(T entity, CancellationToken cancellationToken);
         Task<T> Get(Expression<Func<T, bool>> expression, CancellationToken cancellationToken);
         Task<bool> Any(Expression<Func<T, bool>> expression, CancellationToken cancellationToken);
     }
