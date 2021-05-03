@@ -12,7 +12,8 @@ namespace Stocknize.Infrastructure.Mapping
             builder.Property(e => e.Id)
                 .ValueGeneratedOnAdd();
 
-            builder.Property(e => e.Quantity);
+            builder.Property(e => e.Quantity)
+                .IsRequired();
 
             builder.HasOne(e => e.Product)
                 .WithOne()

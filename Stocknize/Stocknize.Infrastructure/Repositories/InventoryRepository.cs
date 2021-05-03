@@ -10,14 +10,11 @@ namespace Stocknize.Infrastructure.Repositories
 {
     public class InventoryRepository : GenericRepository<Inventory>, IInventoryRepository
     {
-        public InventoryRepository(EFContext context) : base(context)
-        {
-
-        }
+        public InventoryRepository(EFContext context) : base(context) { }
 
         public async Task<IList<Inventory>> GetInventories(CancellationToken cancellationToken)
         {
-            return await entities.Include(e => e.Product).ToListAsync();
+            return await entities.Include(e => e.Product).ThenInclude(e => e.Type).ToListAsync();
         }
     }
 }

@@ -10,7 +10,8 @@ namespace Stocknize.Domain.Automapper
         public ProductMapper()
         {
             CreateMap<Product, ProductOutputModel>()
-                .ForMember(e => e.Type, opt => opt.MapFrom(e => e.Type.GetDescription()));
+                .ForMember(e => e.Type, opt => opt.MapFrom(e => e.Type.Description))
+                .ForMember(e => e.CompanyName, opt => opt.MapFrom(e => e.Company.Name));
 
             CreateMap<ProductInputModel, Product>();
         }

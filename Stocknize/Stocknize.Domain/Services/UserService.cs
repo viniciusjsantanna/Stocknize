@@ -12,12 +12,14 @@ namespace Stocknize.Domain.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository userRepository;
+        private readonly ICompanyRepository companyRepository;
         private readonly IMapper mapper;
         private readonly IJwtGenerator jwtGenerator;
 
-        public UserService(IUserRepository userRepository, IMapper mapper, IJwtGenerator jwtGenerator)
+        public UserService(IUserRepository userRepository, ICompanyRepository companyRepository, IMapper mapper, IJwtGenerator jwtGenerator)
         {
             this.userRepository = userRepository;
+            this.companyRepository = companyRepository;
             this.mapper = mapper;
             this.jwtGenerator = jwtGenerator;
         }
@@ -29,13 +31,15 @@ namespace Stocknize.Domain.Services
             {
                 throw new System.Exception("O usuário existente!");
             }
+            var user = mapper.Map<User>(userModel);
+            user.Company = await companyRepository.Get(e => e.Id.Equals(userModel.CompanyId), cancellationToken);
 
-            return await userRepository.Add(mapper.Map<User>(userModel), cancellationToken);
+            return await userRepository.Add(user, cancellationToken);
         }
 
         public async Task<UserLoggedOutputModel> Authenticate(CredentialsInputModel model, CancellationToken cancellationToken)
         {
-            var user = await userRepository.Get(e => e.Credentials.Login.Equals(model.Login), cancellationToken)
+            var user = await userRepository.GetUserWithCompany(model.Login, cancellationToken)
                 ?? throw new NotFoundException("Login e Senha invalidos");
 
             if (user.Credentials is not null && !user.Credentials.isAuthentic(model.Password))

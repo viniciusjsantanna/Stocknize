@@ -53,6 +53,7 @@ namespace Stocknize.Domain.Services
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.Credentials.Login),
+                new Claim(ClaimTypes.Locality, user.Company.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Aud, configuration["Jwt:Audience"])
             };
         }

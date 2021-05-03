@@ -78,6 +78,7 @@ C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\FluentVali
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Humanizer.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -94,6 +95,9 @@ C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.OpenApi.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\NetCore.AutoRegisterDi.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Scrutor.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -136,7 +140,3 @@ C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\obj\Debug\net5.0\Stocknize.
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\obj\Debug\net5.0\ref\Stocknize.Webapi.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\obj\Debug\net5.0\Stocknize.Webapi.pdb
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\obj\Debug\net5.0\Stocknize.Webapi.genruntimeconfig.cache
-C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Scrutor.dll
-C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.dll
-C:\Users\139988\Stocknize\Stocknize\Stocknize.Webapi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

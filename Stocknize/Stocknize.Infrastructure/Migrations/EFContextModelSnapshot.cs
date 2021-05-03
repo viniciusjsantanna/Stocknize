@@ -19,6 +19,23 @@ namespace Stocknize.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.5")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Stocknize.Domain.Entities.Company", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Company");
+                });
+
             modelBuilder.Entity("Stocknize.Domain.Entities.Inventory", b =>
                 {
                     b.Property<Guid>("Id")
@@ -80,22 +97,46 @@ namespace Stocknize.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("money");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
+                    b.Property<Guid?>("ProductTypeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
+
+                    b.HasIndex("ProductTypeId");
+
+                    b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("Stocknize.Domain.Entities.ProductType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Product");
+                    b.ToTable("ProductType");
                 });
 
             modelBuilder.Entity("Stocknize.Domain.Entities.User", b =>
@@ -104,16 +145,23 @@ namespace Stocknize.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Cpf")
+                        .IsRequired()
                         .HasColumnType("varchar(11)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
 
                     b.ToTable("User");
                 });
@@ -144,20 +192,44 @@ namespace Stocknize.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Stocknize.Domain.Entities.Product", b =>
+                {
+                    b.HasOne("Stocknize.Domain.Entities.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("Stocknize.Domain.Entities.ProductType", "Type")
+                        .WithMany()
+                        .HasForeignKey("ProductTypeId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.Navigation("Company");
+
+                    b.Navigation("Type");
+                });
+
             modelBuilder.Entity("Stocknize.Domain.Entities.User", b =>
                 {
+                    b.HasOne("Stocknize.Domain.Entities.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId");
+
                     b.OwnsOne("Stocknize.Domain.Entities.Credentials", "Credentials", b1 =>
                         {
                             b1.Property<Guid>("UserId")
                                 .HasColumnType("uniqueidentifier");
 
                             b1.Property<string>("Login")
+                                .IsRequired()
                                 .HasColumnType("varchar(50)");
 
                             b1.Property<string>("Password")
+                                .IsRequired()
                                 .HasColumnType("varchar(max)");
 
                             b1.Property<string>("Salt")
+                                .IsRequired()
                                 .HasColumnType("varchar(max)");
 
                             b1.HasKey("UserId");
@@ -167,6 +239,8 @@ namespace Stocknize.Infrastructure.Migrations
                             b1.WithOwner()
                                 .HasForeignKey("UserId");
                         });
+
+                    b.Navigation("Company");
 
                     b.Navigation("Credentials");
                 });

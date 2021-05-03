@@ -13,14 +13,19 @@ namespace Stocknize.Domain.Services
     {
         private readonly IProductRepository productRepository;
         private readonly IInventoryService inventoryService;
+        private readonly ICompanyRepository companyRepository;
         private readonly IMapper mapper;
+        private readonly IProductTypeRepository productTypeRepository;
         private const int DEFAULT_INVENTORY_QUANTITY = 0;
 
-        public ProductService(IProductRepository productRepository, IInventoryService inventoryService, IMapper mapper)
+        public ProductService(IProductRepository productRepository, IInventoryService inventoryService,
+            ICompanyRepository companyRepository, IMapper mapper, IProductTypeRepository productTypeRepository)
         {
             this.productRepository = productRepository;
             this.inventoryService = inventoryService;
+            this.companyRepository = companyRepository;
             this.mapper = mapper;
+            this.productTypeRepository = productTypeRepository;
         }
         public async Task<ProductOutputModel> AddProduct(ProductInputModel productModel, CancellationToken cancellationToken)
         {
@@ -31,7 +36,11 @@ namespace Stocknize.Domain.Services
                 throw new System.Exception("O produto informado já existe!");
             }
 
-            var result = await productRepository.Add(mapper.Map<Product>(productModel), cancellationToken);
+            var product = mapper.Map<Product>(productModel);
+            product.Company = await companyRepository.Get(e => e.Id.Equals(productModel.CompanyId), cancellationToken);
+            product.Type = await productTypeRepository.Get(e => e.Id.Equals(productModel.ProductTypeId), cancellationToken);
+
+            var result = await productRepository.Add(product, cancellationToken);
 
             await inventoryService.AddInventory(result.Id, DEFAULT_INVENTORY_QUANTITY, cancellationToken);
 
