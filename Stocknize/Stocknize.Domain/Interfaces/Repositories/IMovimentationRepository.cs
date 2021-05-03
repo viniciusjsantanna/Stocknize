@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Stocknize.Domain.Interfaces.Repositories
 {
-    public interface IInventoryRepository : IGenericRepository<Inventory>
+    public interface IMovimentationRepository : IGenericRepository<Movimentation>
     {
-        Task<IList<Inventory>> GetInventories(CancellationToken cancellationToken);
+        Task<IList<Movimentation>> GetMovimentations(CancellationToken cancellationToken);
     }
 }

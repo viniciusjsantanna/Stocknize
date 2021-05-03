@@ -19,6 +19,10 @@ namespace Stocknize.Infrastructure.Mapping
                 .HasForeignKey("ProductId")
                 .OnDelete(DeleteBehavior.NoAction);
 
+            builder.HasOne(e => e.User)
+                .WithMany()
+                .HasForeignKey("UserId");
+
             builder.Property(e => e.Type)
                 .HasConversion<string>();
 

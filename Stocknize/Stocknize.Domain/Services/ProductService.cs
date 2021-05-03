@@ -49,7 +49,7 @@ namespace Stocknize.Domain.Services
         public async Task<ProductOutputModel> UpdateProduct(System.Guid productId, ProductInputModel productModel, CancellationToken cancellationToken)
         {
             var product = await productRepository.Get(e => e.Id.Equals(productId), cancellationToken)
-                            ?? throw new System.Exception("Não foi possível encontrar o produto");
+                            ?? throw new NotFoundException("Não foi possível encontrar o produto");
 
             mapper.Map(productModel, product);
 
