@@ -25,3 +25,18 @@ C:\Users\139988\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\ref\Stocknize.Domain.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.pdb
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\bin\Debug\net5.0\Stocknize.Domain.deps.json
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\bin\Debug\net5.0\Stocknize.Domain.dll
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\bin\Debug\net5.0\ref\Stocknize.Domain.dll
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\bin\Debug\net5.0\Stocknize.Domain.pdb
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\bin\Debug\net5.0\Stocknize.Crosscutting.dll
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\bin\Debug\net5.0\Stocknize.Crosscutting.pdb
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.csprojAssemblyReference.cache
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.AssemblyInfoInputs.cache
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.AssemblyInfo.cs
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.csproj.CopyComplete
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.dll
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\ref\Stocknize.Domain.dll
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Domain\obj\Debug\net5.0\Stocknize.Domain.pdb

@@ -36,3 +36,23 @@ C:\Users\139988\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\St
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\ref\Stocknize.Infrastructure.dll
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\Stocknize.Infrastructure.pdb
 C:\Users\139988\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\Stocknize.Infrastructure.genruntimeconfig.cache
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\bin\Debug\net5.0\Stocknize.Infrastructure.deps.json
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\bin\Debug\net5.0\Stocknize.Infrastructure.runtimeconfig.json
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\bin\Debug\net5.0\Stocknize.Infrastructure.runtimeconfig.dev.json
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\bin\Debug\net5.0\Stocknize.Infrastructure.dll
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\bin\Debug\net5.0\ref\Stocknize.Infrastructure.dll
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\bin\Debug\net5.0\Stocknize.Infrastructure.pdb
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\bin\Debug\net5.0\Stocknize.Crosscutting.dll
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\bin\Debug\net5.0\Stocknize.Domain.dll
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\bin\Debug\net5.0\Stocknize.Domain.pdb
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\bin\Debug\net5.0\Stocknize.Crosscutting.pdb
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\Stocknize.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\Stocknize.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\Stocknize.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\Stocknize.Infrastructure.AssemblyInfo.cs
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\Stocknize.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\Stocknize.Infrastructure.csproj.CopyComplete
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\Stocknize.Infrastructure.dll
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\ref\Stocknize.Infrastructure.dll
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\Stocknize.Infrastructure.pdb
+C:\Users\Felipe Nanes\Source\Repos\Stocknize\Stocknize\Stocknize.Infrastructure\obj\Debug\net5.0\Stocknize.Infrastructure.genruntimeconfig.cache
