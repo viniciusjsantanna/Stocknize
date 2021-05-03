@@ -20,7 +20,7 @@ namespace Stocknize.UnitTests.Domain
         public async Task InventoryModelIsValidAfterProductInsertedAtDb_InventoryInsertedSucessfully_ReturnsTaskCompleteAsResultMessage()
         {
             //arrange
-            var product = new Product("Skol lata", 2.39M, ProductType.Beer);
+            var product = new Product("Skol lata", 2.39M);
 
             var mockProductRepository = new Mock<IProductRepository>();
             mockProductRepository.Setup(x => x.Get(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(product));
@@ -63,11 +63,14 @@ namespace Stocknize.UnitTests.Domain
         public async Task MovimentationModelIsValid_MovimentationHasBeenInsertedAndInventoryUpdated_ReturnsMovimentationOutputAsResultMessage()
         {
             //arrange
-            var product = new Product("Skol lata", 2.39M, ProductType.Beer);
+            var product = new Product("Skol lata", 2.39M);
             var user = new User("Vinicius Santana", "11155863437", new Credentials());
             var movimentation = new Movimentation(MovimentationType.Buy, 100, product, user);
             var movimentationInput = new MovimentationInputModel(Guid.NewGuid(), Guid.NewGuid(), MovimentationType.Buy, 100);
-            var movimentationOutput = new MovimentationOutputModel(Guid.NewGuid(), "Vinicius Santana", "Skol lata", "Cerveja", 100);
+            var movimentationOutput = new MovimentationOutputModel(Guid.NewGuid(), "Vinicius Santana", "Skol lata", 100)
+            {
+                Type = "Cerveja"
+            };
             var inventory = new Inventory(product, 100);
 
             var mockInventoryRepository = new Mock<IInventoryRepository>();

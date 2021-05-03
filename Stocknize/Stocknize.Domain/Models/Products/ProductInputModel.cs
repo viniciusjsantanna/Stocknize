@@ -1,11 +1,10 @@
-﻿using Stocknize.Domain.Enums;
+﻿using Stocknize.Domain.Entities;
+using System;
 
 namespace Stocknize.Domain.Models.Products
 {
-    public record ProductInputModel
+    public record ProductInputModel(string Name, decimal Price, Guid ProductTypeId)
     {
-        public string Name { get; init; }
-        public decimal Price { get; init; }
-        public ProductType Type { get; init; }
+        public Guid CompanyId { get; set; }
     }
 }
