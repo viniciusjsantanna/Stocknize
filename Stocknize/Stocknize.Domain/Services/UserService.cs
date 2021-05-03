@@ -52,5 +52,25 @@ namespace Stocknize.Domain.Services
 
             return userLogged;
         }
+
+        public async Task DeleteUser(System.Guid userId, CancellationToken cancellationToken)
+        {
+            var user = await userRepository.Get(e => e.Id.Equals(userId), cancellationToken)
+                ?? throw new NotFoundException("Não foi possível encontrar o usuário");
+
+            await userRepository.Delete(user, cancellationToken);
+        }
+
+        public async Task<UserLoggedOutputModel> UpdateUser(System.Guid userId, UserInputModel userModel, CancellationToken cancellationToken)
+        {
+            var user = await userRepository.Get(e => e.Id.Equals(userId), cancellationToken)
+                            ?? throw new NotFoundException("Não foi possível encontrar o usuário");
+
+            mapper.Map(userModel, user);
+
+            var result = await userRepository.Update(user, cancellationToken);
+
+            return mapper.Map<UserLoggedOutputModel>(result);
+        }
     }
 }
