@@ -20,9 +20,9 @@ namespace Stocknize.Infrastructure.Mapping
                 .IsRequired()
                 .HasColumnType("money");
 
-            builder.HasOne(e => e.Type)
+            builder.HasOne(e => e.Category)
                 .WithMany()
-                .HasForeignKey("ProductTypeId")
+                .HasForeignKey("CategoryId")
                 .OnDelete(DeleteBehavior.NoAction); 
 
             builder.Property(e => e.CreatedAt);

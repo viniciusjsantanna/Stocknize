@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Stocknize.Domain.Interfaces.Repositories
 {
-    public interface IProductTypeRepository : IGenericRepository<ProductType>
+    public interface ICategoryRepository : IGenericRepository<Category>
     {
-        Task<IList<ProductType>> GetProductTypes(CancellationToken cancellationToken); 
+        Task<IList<Category>> GetProductTypes(CancellationToken cancellationToken); 
     }
 }

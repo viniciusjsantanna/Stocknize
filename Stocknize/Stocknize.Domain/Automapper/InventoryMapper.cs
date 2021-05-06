@@ -14,7 +14,7 @@ namespace Stocknize.Domain.Automapper
                 .ForMember(e => e.Quantity, opt => opt.MapFrom(e => e.Quantity))
                 .ForPath(e => e.ProductId, opt => opt.MapFrom(e => e.Product.Id))
                 .ForPath(e => e.ProductName, opt => opt.MapFrom(e => e.Product.Name))
-                .ForPath(e => e.ProductType, opt => opt.MapFrom(e => e.Product.Type.Description));
+                .ForPath(e => e.Category, opt => opt.MapFrom(e => e.Product.Category.Description));
 
             CreateMap<MovimentationInputModel, Movimentation>();
 

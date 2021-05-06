@@ -15,11 +15,11 @@ namespace Stocknize.Domain.Services
         private readonly IInventoryService inventoryService;
         private readonly ICompanyRepository companyRepository;
         private readonly IMapper mapper;
-        private readonly IProductTypeRepository productTypeRepository;
+        private readonly ICategoryRepository productTypeRepository;
         private const int DEFAULT_INVENTORY_QUANTITY = 0;
 
         public ProductService(IProductRepository productRepository, IInventoryService inventoryService,
-            ICompanyRepository companyRepository, IMapper mapper, IProductTypeRepository productTypeRepository)
+            ICompanyRepository companyRepository, IMapper mapper, ICategoryRepository productTypeRepository)
         {
             this.productRepository = productRepository;
             this.inventoryService = inventoryService;
@@ -38,7 +38,7 @@ namespace Stocknize.Domain.Services
 
             var product = mapper.Map<Product>(productModel);
             product.Company = await companyRepository.Get(e => e.Id.Equals(productModel.CompanyId), cancellationToken);
-            product.Type = await productTypeRepository.Get(e => e.Id.Equals(productModel.ProductTypeId), cancellationToken);
+            product.Category = await productTypeRepository.Get(e => e.Id.Equals(productModel.ProductTypeId), cancellationToken);
 
             var result = await productRepository.Add(product, cancellationToken);
 

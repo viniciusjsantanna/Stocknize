@@ -16,6 +16,9 @@ namespace Stocknize.Domain.Automapper
                 .ForMember(e => e.Login, opt => opt.MapFrom(e => e.Credentials.Login))
                 .ForMember(e => e.Name, opt => opt.MapFrom(e => e.Name))
                 .ForAllOtherMembers(e => e.Ignore());
+
+            CreateMap<User, UserOutputModel>()
+                .ForMember(e => e.CompanyName, opt => opt.MapFrom(e => e.Company.Name));
         }
     }
 }

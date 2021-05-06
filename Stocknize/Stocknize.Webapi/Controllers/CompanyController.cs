@@ -6,7 +6,6 @@ using Stocknize.Domain.Models.Company;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Transactions;
 
 namespace Stocknize.Webapi.Controllers
 {
@@ -24,11 +23,9 @@ namespace Stocknize.Webapi.Controllers
         }
 
         [HttpPost]
-        public Task<CompanyOutputModel> Post([FromBody] CompanyInputModel model, CancellationToken cancellationToken)
+        public async Task<CompanyOutputModel> Post([FromBody] CompanyInputModel model, CancellationToken cancellationToken)
         {
-            //var transaction = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            var result = companyService.AddCompany(model, cancellationToken);
-            //transaction.Complete();
+            var result = await companyService.AddCompany(model, cancellationToken);
             return result;
         }
 

@@ -8,6 +8,6 @@ namespace Stocknize.Domain.Interfaces.Domain
     public interface IInventoryService
     {
         Task AddInventory(Guid productId, int quantity, CancellationToken cancellationToken);
-        Task<MovimentationOutputModel> AddMovimentation(MovimentationInputModel movimentationModel, CancellationToken cancellationToken);
+        Task UpdateInventory(MovimentationInputModel movimentation, CancellationToken cancellationToken);
     }
 }

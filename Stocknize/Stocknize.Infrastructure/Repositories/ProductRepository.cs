@@ -16,7 +16,7 @@ namespace Stocknize.Infrastructure.Repositories
 
         public async Task<IList<Product>> GetProducts(Guid companyId, CancellationToken cancellationToken)
         {
-            return await entities.Include(e => e.Company).Include(e => e.Type)
+            return await entities.Include(e => e.Company).Include(e => e.Category)
                 .Where(e => e.Company.Id.Equals(companyId)).ToListAsync(cancellationToken);
         }
     }

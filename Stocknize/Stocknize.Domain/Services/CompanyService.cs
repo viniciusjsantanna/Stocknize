@@ -25,7 +25,7 @@ namespace Stocknize.Domain.Services
 
             if (existCompany)
             {
-                throw new System.Exception("");
+                throw new System.Exception("A empresa informada já existe!");
             }
 
             var company = mapper.Map<Company>(model);

@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Stocknize.Domain.Entities;
 using Stocknize.Domain.Exceptions;
+using Stocknize.Domain.Exceptions.Exist;
 using Stocknize.Domain.Interfaces.Domain;
 using Stocknize.Domain.Interfaces.Repositories;
 using Stocknize.Domain.Models.User;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -23,18 +25,24 @@ namespace Stocknize.Domain.Services
             this.mapper = mapper;
             this.jwtGenerator = jwtGenerator;
         }
-        public async Task<User> AddUser(UserInputModel userModel, CancellationToken cancellationToken)
+        public async Task<UserOutputModel> AddUser(UserInputModel userModel, CancellationToken cancellationToken)
         {
-            var userExist = await userRepository.Any(e => e.Credentials.Login.Equals(userModel.Login), cancellationToken);
+            var userExist = await userRepository.Any(e => e.Credentials.Login.Equals(userModel.Login) || e.Cpf.Equals(userModel.Cpf), cancellationToken);
 
             if (userExist)
             {
-                throw new System.Exception("O usuário existente!");
+                throw new ExistException("O usuário existente!");
             }
+
             var user = mapper.Map<User>(userModel);
             user.Company = await companyRepository.Get(e => e.Id.Equals(userModel.CompanyId), cancellationToken);
 
-            return await userRepository.Add(user, cancellationToken);
+            if (user.Company is null)
+            {
+                throw new NotFoundException("Não foi possível encontrar a empresa informada!");
+            }
+
+            return mapper.Map<UserOutputModel>(await userRepository.Add(user, cancellationToken));
         }
 
         public async Task<UserLoggedOutputModel> Authenticate(CredentialsInputModel model, CancellationToken cancellationToken)
@@ -53,7 +61,7 @@ namespace Stocknize.Domain.Services
             return userLogged;
         }
 
-        public async Task DeleteUser(System.Guid userId, CancellationToken cancellationToken)
+        public async Task DeleteUser(Guid userId, CancellationToken cancellationToken)
         {
             var user = await userRepository.Get(e => e.Id.Equals(userId), cancellationToken)
                 ?? throw new NotFoundException("Não foi possível encontrar o usuário");
@@ -61,7 +69,7 @@ namespace Stocknize.Domain.Services
             await userRepository.Delete(user, cancellationToken);
         }
 
-        public async Task<UserLoggedOutputModel> UpdateUser(System.Guid userId, UserInputModel userModel, CancellationToken cancellationToken)
+        public async Task<UserOutputModel> UpdateUser(Guid userId, UserInputModel userModel, CancellationToken cancellationToken)
         {
             var user = await userRepository.Get(e => e.Id.Equals(userId), cancellationToken)
                             ?? throw new NotFoundException("Não foi possível encontrar o usuário");
@@ -70,7 +78,7 @@ namespace Stocknize.Domain.Services
 
             var result = await userRepository.Update(user, cancellationToken);
 
-            return mapper.Map<UserLoggedOutputModel>(result);
+            return mapper.Map<UserOutputModel>(result);
         }
     }
 }
