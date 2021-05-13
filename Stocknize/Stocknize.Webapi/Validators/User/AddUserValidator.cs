@@ -12,6 +12,8 @@ namespace Stocknize.Webapi.Validators.User
                 .WithMessage("O Nome é obrigatório!");
 
             RuleFor(e => e.Cpf)
+                .NotEmpty()
+                .WithMessage("O Cpf é obrigatório!")
                 .MinimumLength(11)
                 .WithMessage("O Cpf deve ter no minimo 11 caracteres")
                 .MaximumLength(11)
