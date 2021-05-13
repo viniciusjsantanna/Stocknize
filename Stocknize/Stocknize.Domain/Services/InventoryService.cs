@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Stocknize.Domain.Entities;
+﻿using Stocknize.Domain.Entities;
 using Stocknize.Domain.Enums;
 using Stocknize.Domain.Exceptions;
 using Stocknize.Domain.Interfaces.Domain;
@@ -15,21 +14,11 @@ namespace Stocknize.Domain.Services
     {
         private readonly IProductRepository productRepository;
         private readonly IInventoryRepository inventoryRepository;
-        private readonly IMapper mapper;
-        private readonly IMovimentationRepository movimentationRepository;
-        private readonly IUserRepository userRepository;
 
-        public InventoryService(IProductRepository productRepository,
-            IInventoryRepository inventoryRepository,
-            IMapper mapper,
-            IMovimentationRepository movimentationRepository,
-            IUserRepository userRepository)
+        public InventoryService(IProductRepository productRepository, IInventoryRepository inventoryRepository)
         {
             this.productRepository = productRepository;
             this.inventoryRepository = inventoryRepository;
-            this.mapper = mapper;
-            this.movimentationRepository = movimentationRepository;
-            this.userRepository = userRepository;
         }
 
         public async Task AddInventory(Guid productId, int quantity, CancellationToken cancellationToken)
@@ -42,29 +31,16 @@ namespace Stocknize.Domain.Services
             await inventoryRepository.Add(inventory, cancellationToken);
         }
 
-        public async Task<MovimentationOutputModel> AddMovimentation(MovimentationInputModel movimentationModel, CancellationToken cancellationToken)
-        {
-            var movimentation = mapper.Map<Movimentation>(movimentationModel);
-            movimentation.Product = await productRepository.Get(e => e.Id.Equals(movimentationModel.ProductId), cancellationToken);
-            movimentation.User = await userRepository.Get(e => e.Id.Equals(movimentationModel.UserId), cancellationToken);
-
-            var result = await movimentationRepository.Add(movimentation, cancellationToken);
-
-            await UpdateInventory(movimentation, cancellationToken);
-            
-            return mapper.Map<MovimentationOutputModel>(result);
-        }
-
-        private async Task UpdateInventory(Movimentation movimentation, CancellationToken cancellationToken)
+        public async Task UpdateInventory(MovimentationInputModel movimentationModel, CancellationToken cancellationToken)
         {
             var quantity = 0;
-            var inventory = await inventoryRepository.Get(e => e.Product.Id.Equals(movimentation.Product.Id), cancellationToken)
+            var inventory = await inventoryRepository.Get(e => e.Product.Id.Equals(movimentationModel.ProductId), cancellationToken)
                  ?? throw new NotFoundException("Não foi possível encontrar o estoque do produto informado!");
 
-            if (movimentation.Type.Equals(MovimentationType.Buy))
-                quantity = inventory.Quantity + movimentation.Quantity;
+            if (movimentationModel.Type.Equals(MovimentationType.Buy))
+                quantity = inventory.Quantity + movimentationModel.Quantity;
             else
-                quantity = inventory.Quantity - movimentation.Quantity;
+                quantity = inventory.Quantity - movimentationModel.Quantity;
 
             inventory.ChangeQuantity(quantity);
 

@@ -17,6 +17,10 @@
 
         public void ChangeQuantity(int quantity)
         {
+            if(quantity < 0)
+            {
+                throw new System.Exception("Você não tem estoque suficiente para realizar essa movimentação!");
+            }
             Quantity = quantity;
         }
     }

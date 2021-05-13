@@ -15,6 +15,10 @@ namespace Stocknize.Infrastructure.Mapping
             builder.Property(e => e.Quantity)
                 .IsRequired();
 
+            builder.Property(e => e.Price)
+                .HasColumnType("money")
+                .IsRequired();
+
             builder.HasOne(e => e.Product)
                 .WithMany()
                 .HasForeignKey("ProductId")

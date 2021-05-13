@@ -12,7 +12,7 @@ namespace Stocknize.Domain.Entities
 
         public string Name { get; private set; }
         public decimal Price { get; private set; }
-        public ProductType Type { get; set; }
+        public Category Category { get; set; }
         public Company Company { get; set; }
     }
 }

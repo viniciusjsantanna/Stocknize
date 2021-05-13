@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Stocknize.Domain.Models.ProductType
+namespace Stocknize.Domain.Models.Category
 {
-    public record ProductTypeOutputModel
+    public record CategoryOutputModel
     {
         public Guid Id { get; set; }
         public string Description { get; set; }

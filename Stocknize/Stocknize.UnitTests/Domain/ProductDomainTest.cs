@@ -20,7 +20,7 @@ namespace Stocknize.UnitTests.Domain
         private readonly Mock<IInventoryService> mockInventoryService;
         private readonly Mock<ICompanyRepository> mockUserService;
         private readonly Mock<IMapper> mockMapper;
-        private readonly Mock<IProductTypeRepository> mockProductTypeRepository;
+        private readonly Mock<ICategoryRepository> mockProductTypeRepository;
 
         public ProductDomainTest()
         {
@@ -28,7 +28,7 @@ namespace Stocknize.UnitTests.Domain
             mockInventoryService = new Mock<IInventoryService>();
             mockUserService = new Mock<ICompanyRepository>();
             mockMapper = new Mock<IMapper>();
-            mockProductTypeRepository = new Mock<IProductTypeRepository>();
+            mockProductTypeRepository = new Mock<ICategoryRepository>();
         }
 
         [Fact]
