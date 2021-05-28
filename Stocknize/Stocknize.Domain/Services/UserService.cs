@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Stocknize.Domain.Entities;
 using Stocknize.Domain.Exceptions;
-using Stocknize.Domain.Exceptions.Exist;
 using Stocknize.Domain.Interfaces.Domain;
 using Stocknize.Domain.Interfaces.Repositories;
 using Stocknize.Domain.Models.User;

@@ -56,7 +56,7 @@ namespace Stocknize.UnitTests.Domain
 
             mockUserService.Setup(x => x.Get(It.IsAny<Expression<Func<Company, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(company));
 
-            var productService = GenerateProductServiceIntance(mockInventoryService, mockMapper, mockProductRepository, mockUserService);
+            var productService = GenerateProductServiceIntance();
             //act
 
             var result = await productService.AddProduct(productInputModel, new CancellationToken());
@@ -80,12 +80,9 @@ namespace Stocknize.UnitTests.Domain
             };
 
             mockProductRepository.Setup(x => x.Any(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(true));
-
-            var mockInventoryService = new Mock<IInventoryService>();
-
             mockUserService.Setup(x => x.Get(It.IsAny<Expression<Func<Company, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(company));
 
-            var productService = GenerateProductServiceIntance(mockInventoryService, mockMapper, mockProductRepository, mockUserService);
+            var productService = GenerateProductServiceIntance();
 
             //assert
             await Assert.ThrowsAsync<Exception>(async () => await productService.AddProduct(productInputModel, new CancellationToken()));
@@ -116,21 +113,16 @@ namespace Stocknize.UnitTests.Domain
                 Type = "Cerveja"
             };
 
-            var mockInventoryService = new Mock<IInventoryService>();
-
-            var mockMapper = new Mock<IMapper>();
             mockMapper.Setup(x => x.Map(It.IsAny<ProductInputModel>(), It.IsAny<Product>())).Returns(product);
             mockMapper.Setup(x => x.Map<ProductOutputModel>(It.IsAny<Product>())).Returns(productOutput);
 
-            var mockRepository = new Mock<IProductRepository>();
-            mockProductRepository.Setup(x => x.Get(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(productDb));
+            mockProductRepository.Setup(x => x.Get(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).ReturnsAsync(productDb);
             mockProductRepository.Setup(x => x.Update(It.IsAny<Product>(), It.IsAny<CancellationToken>()))
-                .Returns(Task.FromResult(product));
+                .ReturnsAsync(product);
 
-            var mockUserService = new Mock<ICompanyRepository>();
-            mockUserService.Setup(x => x.Get(It.IsAny<Expression<Func<Company, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(company));
+            mockUserService.Setup(x => x.Get(It.IsAny<Expression<Func<Company, bool>>>(), It.IsAny<CancellationToken>())).ReturnsAsync(company);
 
-            var productService = GenerateProductServiceIntance(mockInventoryService, mockMapper, mockRepository, mockUserService);
+            var productService = GenerateProductServiceIntance();
 
             //Act
 
@@ -155,11 +147,10 @@ namespace Stocknize.UnitTests.Domain
                 CompanyId = Guid.NewGuid()
             };
 
-
             mockProductRepository.Setup(x => x.Get(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(product));
             mockUserService.Setup(x => x.Get(It.IsAny<Expression<Func<Company, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(company));
 
-            var productService = GenerateProductServiceIntance(mockInventoryService, mockMapper, mockProductRepository, mockUserService);
+            var productService = GenerateProductServiceIntance();
 
             //assert
             await Assert.ThrowsAsync<NotFoundException>(async () => await productService.UpdateProduct(Guid.NewGuid(), productInputModel, new CancellationToken()));
@@ -174,11 +165,10 @@ namespace Stocknize.UnitTests.Domain
                 Id = Guid.NewGuid()
             };
 
-
             mockProductRepository.Setup(x => x.Get(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(product));
             mockProductRepository.Setup(x => x.Delete(It.IsAny<Product>(), It.IsAny<CancellationToken>())).Returns(Task.CompletedTask);
 
-            var productService = GenerateProductServiceIntance(mockInventoryService, mockMapper, mockProductRepository, mockUserService);
+            var productService = GenerateProductServiceIntance();
 
             //act
             await productService.DeleteProduct(Guid.NewGuid(), new CancellationToken());
@@ -195,15 +185,15 @@ namespace Stocknize.UnitTests.Domain
 
             mockProductRepository.Setup(x => x.Get(It.IsAny<Expression<Func<Product, bool>>>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(product));
             mockProductRepository.Setup(x => x.Delete(It.IsAny<Product>(), It.IsAny<CancellationToken>())).Returns(Task.CompletedTask);
-            ProductService productService = GenerateProductServiceIntance(mockInventoryService, mockMapper, mockProductRepository, mockUserService);
+            ProductService productService = GenerateProductServiceIntance();
 
             //act
             await Assert.ThrowsAsync<NotFoundException>(async () => await productService.DeleteProduct(Guid.NewGuid(), new CancellationToken()));
         }
 
-        private ProductService GenerateProductServiceIntance(Mock<IInventoryService> mockInventoryService, Mock<IMapper> mockMapper, Mock<IProductRepository> mockRepository, Mock<ICompanyRepository> mockUserService)
+        private ProductService GenerateProductServiceIntance()
         {
-            return new ProductService(mockRepository.Object, mockInventoryService.Object, mockUserService.Object, mockMapper.Object, mockProductTypeRepository.Object);
+            return new ProductService(mockProductRepository.Object, mockInventoryService.Object, mockUserService.Object, mockMapper.Object, mockProductTypeRepository.Object);
         }
     }
 }

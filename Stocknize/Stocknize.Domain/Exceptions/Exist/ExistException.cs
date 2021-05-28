@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Stocknize.Domain.Exceptions.Exist
+namespace Stocknize.Domain.Exceptions
 {
-    internal class ExistException : Exception
+    public class ExistException : Exception
     {
         public ExistException(string message) : base(message)
         {

@@ -4,7 +4,7 @@ namespace Stocknize.Domain.Models.Company
 {
     public record CompanyOutputModel
     {
-        public Guid Id { get; private set; }
-        public string Name { get; private set; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
     }
 }

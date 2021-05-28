@@ -27,8 +27,10 @@ namespace Stocknize.UnitTests.Domain
             {
                 UserId = Guid.NewGuid()
             };
-            var movimentationOutput = new MovimentationOutputModel(Guid.NewGuid(), "Vinicius Santana", "Skol lata", 100)
+            var movimentationOutput = new MovimentationOutputModel(Guid.NewGuid(), 100)
             {
+                User = "Vinicius Santana",
+                Product = "Skol lata",
                 Type = "Cerveja"
             };
             var inventory = new Inventory(product, 100);
