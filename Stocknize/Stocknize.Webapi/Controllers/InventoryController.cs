@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Stocknize.Crosscutting.Extensions;
 using Stocknize.Domain.Interfaces.Domain;
 using Stocknize.Domain.Interfaces.Repositories;
 using Stocknize.Domain.Models.Inventories;
@@ -31,21 +32,9 @@ namespace Stocknize.Webapi.Controllers
         [HttpGet]
         public async Task<IList<InventoryOutputModel>> Get(CancellationToken cancellationToken)
         {
-            return mapper.Map<IList<InventoryOutputModel>>(await inventoryRepository.GetInventories(cancellationToken));
+            return mapper.Map<IList<InventoryOutputModel>>(await inventoryRepository.GetInventories(HttpContext.GetLoggedUserCompany(), cancellationToken));
         }
 
-        [HttpPost]
-        public async Task<MovimentationOutputModel> Post([FromBody] MovimentationInputModel movimentationInputModel, CancellationToken cancellationToken)
-        {
-            movimentationInputModel.UserId = Guid.Parse(HttpContext.User.Claims.FirstOrDefault(e => e.Type.Contains("nameidentifier")).Value);
-            return await inventoryService.AddMovimentation(movimentationInputModel, cancellationToken);
-        }
 
-        [HttpGet]
-        [Route("movimentations")]
-        public async Task<IList<MovimentationOutputModel>> GetMovimentations([FromServices] IMovimentationRepository movimentationRepository, CancellationToken cancellationToken)
-        {
-            return mapper.Map<IList<MovimentationOutputModel>>(await movimentationRepository.GetMovimentations(cancellationToken));
-        }
     }
 }

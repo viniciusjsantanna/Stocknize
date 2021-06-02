@@ -16,6 +16,7 @@ namespace Stocknize.Domain.Entities
 
         public MovimentationType Type { get; private set; }
         public int Quantity { get; set; }
+        public decimal Price { get; set; }
         public Product Product { get; set; }
         public User User { get; set; }
     }

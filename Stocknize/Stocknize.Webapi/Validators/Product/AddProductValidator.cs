@@ -17,7 +17,7 @@ namespace Stocknize.Webapi.Validators.Product
                 .GreaterThan(0M)
                 .WithMessage("O Preço deve ser maior que zero");
 
-            RuleFor(e => e.Type)
+            RuleFor(e => e.ProductTypeId)
                 .NotNull()
                 .WithMessage("O Tipo é obrigatório!");
         }

@@ -12,7 +12,12 @@ namespace Stocknize.Infrastructure.Mapping
             builder.Property(e => e.Id)
                 .ValueGeneratedOnAdd();
 
-            builder.Property(e => e.Quantity);
+            builder.Property(e => e.Quantity)
+                .IsRequired();
+
+            builder.Property(e => e.Price)
+                .HasColumnType("money")
+                .IsRequired();
 
             builder.HasOne(e => e.Product)
                 .WithMany()
@@ -24,6 +29,7 @@ namespace Stocknize.Infrastructure.Mapping
                 .HasForeignKey("UserId");
 
             builder.Property(e => e.Type)
+                .IsRequired()
                 .HasConversion<string>();
 
             builder.Property(e => e.CreatedAt);

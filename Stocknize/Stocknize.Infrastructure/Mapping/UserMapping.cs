@@ -12,10 +12,16 @@ namespace Stocknize.Infrastructure.Mapping
             builder.Property(e => e.Id).ValueGeneratedOnAdd();
 
             builder.Property(e => e.Name)
-                .HasColumnType("varchar(100)");
+                .HasColumnType("varchar(100)")
+                .IsRequired();
 
             builder.Property(e => e.Cpf)
-                .HasColumnType("varchar(11)");
+                .HasColumnType("varchar(11)")
+                .IsRequired();
+
+            builder.HasOne(e => e.Company)
+                .WithMany()
+                .HasForeignKey("CompanyId");
 
             builder.OwnsOne(
                 e => e.Credentials,
@@ -23,11 +29,14 @@ namespace Stocknize.Infrastructure.Mapping
                 {
                     e.ToTable("Credentials");
                     e.Property(e => e.Login)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar(50)")
+                        .IsRequired();
                     e.Property(e => e.Password)
-                        .HasColumnType("varchar(max)");
+                        .HasColumnType("varchar(max)")
+                        .IsRequired();
                     e.Property(e => e.Salt)
-                        .HasColumnType("varchar(max)");
+                        .HasColumnType("varchar(max)")
+                        .IsRequired();
                 });
         }
     }

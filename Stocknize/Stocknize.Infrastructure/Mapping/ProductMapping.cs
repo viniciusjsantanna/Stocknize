@@ -13,15 +13,24 @@ namespace Stocknize.Infrastructure.Mapping
                 .ValueGeneratedOnAdd();
 
             builder.Property(e => e.Name)
+                .IsRequired()
                 .HasColumnType("varchar(50)");
 
             builder.Property(e => e.Price)
+                .IsRequired()
                 .HasColumnType("money");
 
-            builder.Property(e => e.Type)
-                .HasConversion<string>();
+            builder.HasOne(e => e.Category)
+                .WithMany()
+                .HasForeignKey("CategoryId")
+                .OnDelete(DeleteBehavior.NoAction); 
 
             builder.Property(e => e.CreatedAt);
+
+            builder.HasOne(e => e.Company)
+                .WithMany()
+                .HasForeignKey("CompanyId")
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

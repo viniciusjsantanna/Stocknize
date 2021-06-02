@@ -8,7 +8,7 @@ namespace Stocknize.Domain.Entities
 {
     public class Credentials
     {
-        public string Login { get; private set; }
+        public string Login { get; set; }
         private string password;
         public string Password
         {
