@@ -31,6 +31,10 @@ namespace Stocknize.Webapi
         {
             services.InfraRegister(Configuration);
             services.DomainRegister();
+            services.AddCors(policy =>
+            {
+                policy.AddPolicy("hosts", opt => opt.AllowAnyHeader().AllowAnyOrigin().AllowCredentials().AllowAnyMethod());
+            });
 
             services.AddAuthorization()
                     .AddAuthentication(options =>
