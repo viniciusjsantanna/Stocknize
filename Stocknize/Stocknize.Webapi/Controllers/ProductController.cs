@@ -15,7 +15,6 @@ namespace Stocknize.Webapi.Controllers
 {
     [Route("api/products")]
     [ApiController]
-    [Authorize]
     public class ProductController : ControllerBase
     {
         private readonly IProductRepository productRepository;
